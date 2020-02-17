@@ -1,0 +1,11 @@
+Open Mined is a recent project that aims to decentralise Artificial Intelligence by leveraging blockchain technology. It started a month ago, more less, and I first heard about them when I met Andrew Trask during last weekend in Toronto. Andrew was invited to give a talk about Open Mined at the AI Decentralised event at MaRS.
+
+Curious about who Andrew is? Follow him on Twitter. Andrew presented at the event Open Mineds proof of concept, I recorded 80% of the talk and you can find the link to the video at the bottom of this page. Sorry it got cut, my phone ran out of battery..
+
+Open Mined tackles the following problem that does not affect only companies who seek to build artificial intelligence products or to apply AI to improve their services, but also to the data sources: us, the people who generate data 24/7. We are constantly, and sometimes inevitably, providing data to tech companies in exchange of the access to their services. This is made legal from the moment we accept the boiler-plated Terms & Conditions of every application we download to our smartphones or login on our browsers.
+
+Just think about how much time we are actively and passively generating while using our devices, there is just so much data we are giving away. This is indeed a conversation about privacy, but who cares about privacy? How many of us have actually read the Terms & Conditions before accepting them? How often do you revise your privacy settings on your iPhone?
+
+In fact, we dont really care that much about it. However, what if you could earn money by providing the data? More specifically, what if you can easily sell your data in a format that they cannot actually read or understand?
+
+This is what Open Mined is going to offer. We, app users, will continue to generate data as we currently are, the data will be used to train AI models (machine learning, deep learning, etc) without leaving the device, the model will be encrypted with Homomorphic Encryption, and shared with practitioners. The compensation will be determined by how much your data contributes to the accuracy of the model, automatically.

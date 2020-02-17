@@ -1,0 +1,6 @@
+MINIX 3 is a free open-source operating system that can be used for studying operating systems, as a base for research projects, or for commercial (embedded) systems where microkernel systems dominate the market. Much of the focus on the project is on achieving high reliability through fault tolerance and self-healing techniques.
+
+MINIX is based on a small (about 12K lines of code) microkernel that runs in kernel mode. The rest of the operating system runs as a collection of server processes, each one protected by the hardware MMU. These processes include the virtual file system, one or more actual file systems, the memory manager, the process manager, the reincarnation server, and the device drivers, each one running as a separate user-mode process.
+
+One consequence of this design is that failures of the system due to bugs or attacks are isolated. For example, a failure or takeover of the audio driver due to a bug or exploit can lead to strange sounds but cannot lead to a full takeover of the operating system. Similarly, crashes of a system component can in many cases be automatically and transparently recovered without human intervention. Few, if any, other operating systems are as self-healing as MINIX 3.
+
