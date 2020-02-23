@@ -32,7 +32,7 @@ def search(index_file, search_string):
     for word in x_copy_no_logic.split():
         # For each word, replace in x with equivalent array
         if word not in word_list:
-            return [0] * len(doc_list)
+            return list(compress(doc_list, [0] * len(doc_list)))
         x = x.replace(word, 'np.array(' + str(list(map(bool, index[word_list.index(word)]))) + ')')
 
 
@@ -41,4 +41,4 @@ def search(index_file, search_string):
     x = x.replace('||', '|')
     x = x.replace('!', 'np.logical_not')
 
-    return(list(compress(doc_list, eval(x).tolist())))
+    return list(compress(doc_list, eval(x).tolist()))

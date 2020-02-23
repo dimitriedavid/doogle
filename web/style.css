@@ -1,0 +1,63 @@
+/* input[type="text"] {
+    outline: none;
+    box-shadow:none !important;
+    border:1px solid #ccc !important;
+} */
+
+.logo {
+    margin-bottom: 2.5rem;
+    height: 30%;
+    width: 30%;
+}
+
+.form-control.shadow-danger {
+    max-width: 25rem;
+}
+
+.form-control.shadow-danger:focus {
+    border-color: #f2f2f2;
+    box-shadow: 0 0 0 0.1rem rgba(200, 200, 200, 1);
+}
+
+.search-button {
+    margin-top: .7rem;
+}
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    margin-top: -5rem;
+
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* LOADING CIRCLE */
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #000000;
+    border-color: #000000 transparent #000000 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

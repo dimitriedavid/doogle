@@ -9,6 +9,4 @@ def analyse(folder, output_name):
     analyseDocuments(folder)
     writeAnalysedIndexToFile(output_name)
 
-x = input("Search query: ")
-
-print(search(INDEX_NAME, x))
+analyse('web/docs', INDEX_NAME)
