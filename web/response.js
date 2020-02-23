@@ -12,5 +12,5 @@ async function handleResponse(response) {
         words = await eel.getWordsFromFile(30, res)();
         document.getElementById("hereGoesEverything").innerHTML += '<div class="jumbotron"><h4><b>' + res + '</b></h1><p>' + words + '</p><a class="btn btn-primary btn-sm" href="/docs/' + res + '" role="button">Open document</a></div>';
     }
-    document.getElementById("hereGoesEverything").innerHTML += '<p>Search took: ' + decoded_response['response_time'] / 1000 + 'milliseconds</p>';
+    document.getElementById("hereGoesEverything").innerHTML += '<p>Search took: ' + decoded_response['response_time'] / 1000 + ' milliseconds</p>';
 }

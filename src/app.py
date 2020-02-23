@@ -1,18 +1,23 @@
 import eel
+from analyser import checkAutoAnalyse
 from search import search
 import asyncio
 import json
 import datetime
 
 # Inits
-INDEX_FILE = 'index.csv'
+WEB_FOLDER = '../web'
+INDEX_FILE = '../data/index.csv'
+DOCS_FOLDER = '../web/docs'
 last_search_query = ''
 response = []
 response_time = .0
 
-# Web files location
-eel.init('web')
+# Auto-analyse if needed
+checkAutoAnalyse(DOCS_FOLDER, INDEX_FILE)
 
+# Web files location
+eel.init(WEB_FOLDER)
 
 def search_pls(input):
     global response
@@ -20,6 +25,7 @@ def search_pls(input):
     global response_time
 
     a = datetime.datetime.now()
+    checkAutoAnalyse(DOCS_FOLDER, INDEX_FILE)
     response = search(INDEX_FILE, input)
     b = datetime.datetime.now()
     last_search_query = input
@@ -31,7 +37,7 @@ def search_pls(input):
 # EEL Functions
 @eel.expose
 def getWordsFromFile(n, file):
-    fi = open('web/docs/' + file, "r")
+    fi = open(DOCS_FOLDER + '/' + file, "r")
     res = ' '.join(fi.read().split()[:n]) + ' ...'
     return res
 

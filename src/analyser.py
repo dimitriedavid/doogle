@@ -1,16 +1,34 @@
 import os
 import string
 import numpy as np
+import datetime
+import filecmp
 
 word_list = []
 index = []
 doc_list = None
 
+def checkAutoAnalyse(folder, index_output):
+    if os.path.exists("../data/data"):
+        computeHash(folder, '../data/tmp')
+        if filecmp.cmp('../data/data', '../data/tmp', shallow=False):
+            os.remove('../data/tmp')
+            return
 
-def analyseDocuments(folder):
+    os.remove('../data/tmp')
+    print("Documents changed. Re-analysing.")
+    analyseDocuments(folder, index_output)
+    return
+
+def computeHash(folder, output):
+    os.system("sha1sum " + folder + "/* | sha1sum > " + output)
+
+def analyseDocuments(folder, output_file):
     global doc_list
     global index
     global word_list
+
+    a = datetime.datetime.now()
 
     # Get documents to analyse
     doc_list = os.listdir(os.getcwd() + '/' + folder + '/')
@@ -36,6 +54,14 @@ def analyseDocuments(folder):
                 # Mark word in index - corresponding document
                 index[word_list.index(word)][doc_list.index(document)] = 1
     
+    writeAnalysedIndexToFile(output_file)
+
+    computeHash(folder, '../data/data')
+    
+    b = datetime.datetime.now()
+    c = b - a
+    c = c.microseconds / 1000
+    print("Document analysis took %s milliseconds" % c)
 
 def writeAnalysedIndexToFile(file):
     if doc_list is None:
