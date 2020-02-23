@@ -9,9 +9,12 @@ import datetime
 WEB_FOLDER = '../web'
 INDEX_FILE = '../data/index.csv'
 DOCS_FOLDER = '../web/docs'
+CACHE_DIMENSION = 20     # 0 means no cache
 last_search_query = ''
-response = []
 response_time = .0
+cache = []
+response = []
+last_search_query = ''
 
 # Auto-analyse if needed
 checkAutoAnalyse(DOCS_FOLDER, INDEX_FILE)
@@ -26,9 +29,24 @@ def search_pls(input):
 
     a = datetime.datetime.now()
     checkAutoAnalyse(DOCS_FOLDER, INDEX_FILE)
-    response = search(INDEX_FILE, input)
-    b = datetime.datetime.now()
     last_search_query = input
+    result = None
+    for res in cache:
+        if input in res:
+            result = res[input]
+
+    if result == None:
+        print("Here")
+        response = search(INDEX_FILE, input)
+        # Check if cache has reached its limit
+        cache.append({input : response})
+        if len(cache) > CACHE_DIMENSION:
+            cache.pop(0)
+    else:
+        response = result
+    
+
+    b = datetime.datetime.now()
     c = b - a
     response_time = c.microseconds
     print('Search took %s microseconds' % response_time)
