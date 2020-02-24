@@ -18,6 +18,17 @@ To install Doogle just run the following command:
 ```
 python3 ./src/install.py
 ```
+After installing, there are some variables you can configure, stored in `src/config.py`
+
+* `DOCS_FOLDER` - specifies the folder where the documents will be stored -> it is best to be left **default** (`web/docs`), so that there are no problems with the web server.
+
+* `INDEX_FILE` - specifies the file where the index values will be stored
+
+* `CACHE_DIMENSION` - specifies the search cache length (number of searches to be remembered)
+
+* `HOST` - web server host
+
+* `PORT` - web server port
 
 ### Loading documents
 
@@ -64,7 +75,7 @@ Doogle is not just a simple common search engine. It comes with a lot of feature
 
 Doogle uses an Electron-like offline HTML/JS GUI that runs as a web server.
 
-It works best with Google Chrome as it is native supported, but you can also use Doogle from any other browser. You just need to enter this URL: `http://127.0.0.1:8000/index.html`
+It works best with Google Chrome as it is native supported, but you can also use Doogle from any other browser. You just need to enter this URL: `http://{HOST}:{PORT}/index.html`
 
 Also, did you know that Doogle can be accesed by other people in your network? Well yes, since it is a web server.
 
@@ -86,7 +97,7 @@ We extended the search query format so that searching multiple words with no log
 * `hi my name is Dimi`  -->  `hi && my && name && is && Dimi`
 
 ### Extras:
-#### Index.csv
+#### Index file
 We made it very easy for anyone to use our analysing algorithm. We save the index file as a csv, so that anyone can understand it.
 #### Very efficient document analysis
 Also, the analysis algorithm is very efficient, being capable of analysing documents at about 40MB/s on a medium spec computer.

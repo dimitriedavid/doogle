@@ -4,12 +4,11 @@ from search import search
 import asyncio
 import json
 import datetime
+from config import *
 
 # Inits
 WEB_FOLDER = '../web'
-INDEX_FILE = '../data/index.csv'
-DOCS_FOLDER = '../web/docs'
-CACHE_DIMENSION = 20     # 0 means no cache
+
 last_search_query = ''
 response_time = .0
 cache = []
@@ -77,4 +76,4 @@ def on_close(page, sockets):
     return
 
 # Start
-eel.start('index.html', size=(1280, 720), app_mode=False, host='127.0.0.1', close_callback=on_close, all_interfaces=True, js_result_timeout=100000)
+eel.start('index.html', size=(1280, 720), app_mode=False, host=HOST, port=PORT, close_callback=on_close, all_interfaces=True, js_result_timeout=100000)
