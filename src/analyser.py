@@ -14,8 +14,8 @@ def checkAutoAnalyse(folder, index_output):
         if filecmp.cmp('../data/data', '../data/tmp', shallow=False):
             os.remove('../data/tmp')
             return
-
-    os.remove('../data/tmp')
+    if os.path.exists('../data/tmp'):
+        os.remove('../data/tmp')
     print("Documents changed. Re-analysing.")
     analyseDocuments(folder, index_output)
     return
@@ -31,7 +31,7 @@ def analyseDocuments(folder, output_file):
     a = datetime.datetime.now()
 
     # Get documents to analyse
-    doc_list = os.listdir(os.getcwd() + '/' + folder + '/')
+    doc_list = os.listdir(os.path.relpath(folder + '/'))
     doc_list.sort()
 
     # Go through each document

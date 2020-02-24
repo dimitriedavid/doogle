@@ -1,0 +1,11 @@
+ Originally, Linus Torvalds used no revision control at all. Kernel contributors would post their patches to the Usenet group, and later to the mailing list, and Linus would apply them to his own source tree. Eventually, Linus would put out a new release of the whole tree, with no division between any of the patches. The only way to examine the history of his process was as a giant diff between two full releases.
+
+This was not because there were no open-source revision control systems available. CVS had been around since the 1980s, and it was still the most popular system around. At its core, it would allow contributors to submit patches to a central repository and examine the history of patches going into that repository.
+
+There were many complaints about CVS though. One was that it tracked changes on a per-file basis and didn't recognize a larger patch as a single revision, which made it hard to interpret the past contributions of other developers. There also were some hard-to-fix bugs, like race conditions when two conflicting patches were submitted at the same time.
+
+Linus didn't like CVS, partly for the same reasons voiced by others and partly for his own reasons that would become clear only later. He also didn't like Subversion, an open-source project that emerged around the start of the 2000s and had the specific goal of addressing the bugs and misfeatures in CVS.
+
+Many Linux kernel developers were unhappy with the lack of proper revision control, so there always was a certain amount of community pressure for Linus to choose something from one of the available options. Then, in 2002, he did. To everyone's shock and dismay, Linus chose BitKeeper, a closed-source commercial system developed by the BitMover company, run by Larry McVoy.
+
+The Linux kernel was the most important open-source project in history, and Linus himself was the person who first discovered the techniques of open-source development that had eluded the GNU project, and that would be imitated by open-source projects for decades to come, right up to the present day. What was Linus thinking? How could he betray his community and the Open Source world like this? Those were the thoughts of many when Linus first started using BitKeeper for kernel development. 

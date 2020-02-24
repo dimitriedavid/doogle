@@ -16,7 +16,7 @@ First of all, clone the Github repository and navigate to the respective folder.
 
 To install Doogle just run the following command:
 ```
-chmod +x ./src/install.sh; ./install.sh
+chmod +x ./src/install.sh; ./src/install.sh
 ```
 After installing, there are some variables you can configure, stored in `src/config.py`
 
@@ -34,14 +34,18 @@ After installing, there are some variables you can configure, stored in `src/con
 
 All the documents that you want to use in this search engine will be stored in `web/docs`.
 
-You don't have to do any more steps, because Doogle auto-analyses the files on any change.
+You don't have to do any more steps related to the documents, because Doogle auto-analyses the files on any change.
+
+*There are some documents in the folder for example purposes only. To use your own, just delete the files in `web/docs` and add your own*
 
 ### Running
-
-You can very easily run Doogle with:
+Before you can run Doogle, make sure that you put your documents in `web/docs`.
+You can very easily run Doogle like this:
+Go to `src` directory and then use this command:
 ```
-python3 ./src/app.py
+python3 app.py
 ```
+Always run Doogle from inside **src** folder
 #### Stopping
 Remember that Doogle also has a web server integrated and for stopping it, you need to close the Python process with `Ctrl+C` 
 

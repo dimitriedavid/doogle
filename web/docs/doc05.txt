@@ -1,0 +1,42 @@
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     Smashing The Stack For Fun And Profit
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+                                 by Aleph One
+                             aleph1@underground.org
+
+	`smash the stack` [C programming] n. On many C implementations
+	it is possible to corrupt the execution stack by writing past
+	the end of an array declared auto in a routine.  Code that does
+	this is said to smash the stack, and can cause return from the
+	routine to jump to a random address.  This can produce some of
+	the most insidious data-dependent bugs known to mankind.
+	Variants include trash the stack, scribble the stack, mangle
+	the stack; the term mung the stack is not used, as this is
+	never done intentionally. See spam; see also alias bug,
+	fandango on core, memory leak, precedence lossage, overrun screw.
+
+
+                                 Introduction
+                                 ~~~~~~~~~~~~
+
+   Over the last few months there has been a large increase of buffer
+overflow vulnerabilities being both discovered and exploited.  Examples
+of these are syslog, splitvt, sendmail 8.7.5, Linux/FreeBSD mount, Xt 
+library, at, etc.  This paper attempts to explain what buffer overflows 
+are, and how their exploits work.
+
+   Basic knowledge of assembly is required.  An understanding of virtual 
+memory concepts, and experience with gdb are very helpful but not necessary.
+We also assume we are working with an Intel x86 CPU, and that the operating 
+system is Linux.
+
+   Some basic definitions before we begin: A buffer is simply a contiguous 
+block of computer memory that holds multiple instances of the same data 
+type.  C programmers normally associate with the word buffer arrays. Most 
+commonly, character arrays.  Arrays, like all variables in C, can be 
+declared either static or dynamic.  Static variables are allocated at load 
+time on the data segment.  Dynamic variables are allocated at run time on 
+the stack. To overflow is to flow, or fill over the top, brims, or bounds. 
+We will concern ourselves only with the overflow of dynamic buffers, otherwise
+known as stack-based buffer overflows.

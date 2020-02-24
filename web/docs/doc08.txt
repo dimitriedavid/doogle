@@ -1,0 +1,8 @@
+Python is an easy to learn, powerful programming language. Those are the first words of the official Python Tutorial. 
+That is true, but there is a catch: because the language is easy to learn and put to use, 
+many practicing Python programmers leverage only a fraction of its powerful features.
+An experienced programmer may start writing useful Python code in a matter of hours. 
+As the first productive hours become weeks and months, a lot of developers go on writing Python 
+code with a very strong accent carried from languages learned before. 
+Even if Python is your first language, often in academia and in introductory books it is presented while 
+carefully avoiding language-specific features.
