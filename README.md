@@ -16,7 +16,7 @@ First of all, clone the Github repository and navigate to the respective folder.
 
 To install Doogle just run the following command:
 ```
-python3 ./src/install.py
+chmod +x ./src/install.sh; ./install.sh
 ```
 After installing, there are some variables you can configure, stored in `src/config.py`
 
