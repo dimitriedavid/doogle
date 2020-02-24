@@ -28,8 +28,10 @@ def search(index_file, search_string):
         # '1' -> 1
         index.append(list(map(int, tmp[1:])))
 
-    # Lets parse search query
 
+    # Lets parse search query
+    if search_string.find('&&') == -1 and search_string.find('||') == -1 and search_string.find('!') == -1:
+        search_string = search_string.replace(' ', ' && ')
     # First lets get all the words replaced
     x_copy_no_logic = search_string.translate(str.maketrans('', '', string.punctuation.replace('\'', '')))
     if len(x_copy_no_logic.split()) == 0:

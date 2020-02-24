@@ -72,8 +72,6 @@ def get_response(input):
     return json.dumps(res)
 
 
-
-
 # Crash fix
 def on_close(page, sockets):
     return
