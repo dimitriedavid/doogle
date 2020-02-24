@@ -1,10 +1,8 @@
 function searchPressed() {
-
-    document.getElementById("forMod").innerHTML = '<div class="lds-dual-ring"></div>'
-
     // Compute response
     let search_inp = document.getElementById("search-inp").value;
     if(search_inp != '') {
+        document.getElementById("forMod").innerHTML = '<div class="lds-dual-ring"></div>'
         eel.search_pressed(search_inp);
 
         // Go to response page

@@ -36,7 +36,6 @@ def search_pls(input):
             result = res[input]
 
     if result == None:
-        print("Here")
         response = search(INDEX_FILE, input)
         # Check if cache has reached its limit
         cache.append({input : response})
@@ -50,7 +49,6 @@ def search_pls(input):
     c = b - a
     response_time = c.microseconds
     print('Search took %s microseconds' % response_time)
-
 
 # EEL Functions
 @eel.expose
