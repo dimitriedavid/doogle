@@ -47,9 +47,13 @@ Here are some examples:
 
 ***To be remembered:*** Doogle is **NOT** case-sensitive! 
 
-## How it works
+## How does it work
 
-SOME WORDS ABOUT HOW IT WORKS
+Doogle uses an `inverted index` structure for storing the words in the documents. When it starts and also before every search, it check if there is analysis of documents needed. Doogle is very efficient and was created with performance in mind. 
+
+To solve the search queries, Doogle uses boolean logic on arrays that hold the apparition of a word in the documents list. (`True` - the word is in that document, `False` - the word is not in that document).
+
+Using Eel, Doogle now has an intuitive GUI. Eel allows JavaScript functions to be called from Python and vice versa. You can also pass data between the Python process and JavaScript, also by using these `exposed functions`.
 
 
 ## Features
